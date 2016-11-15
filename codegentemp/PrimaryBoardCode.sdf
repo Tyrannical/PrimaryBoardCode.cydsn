@@ -1,0 +1,26 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2016-11-15T17:00:55Z")
+ (DESIGN "PrimaryBoardCode")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "PSoC Creator")
+ (VERSION " 4.0")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "PrimaryBoardCode")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT Pin_Red\(0\)_PAD Pin_Red\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED1\(0\)_PAD LED1\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED2\(0\)_PAD LED2\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED3\(0\)_PAD LED3\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT MOSFET1\(0\)_PAD MOSFET1\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED4\(0\)_PAD LED4\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED5\(0\)_PAD LED5\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED6\(0\)_PAD LED6\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

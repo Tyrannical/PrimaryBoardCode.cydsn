@@ -1,0 +1,904 @@
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB35:
+  25              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  * Christopher Garling
+   3:main.c        ****  * ========================================
+   4:main.c        **** */
+   5:main.c        **** #include <project.h>
+   6:main.c        **** 
+   7:main.c        **** int main()
+   8:main.c        **** {
+  26              		.loc 1 8 0
+  27              		.cfi_startproc
+  28 0000 10B5     		push	{r4, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 4, -8
+  31              		.cfi_offset 14, -4
+   9:main.c        ****     CyGlobalIntEnable;
+  32              		.loc 1 9 0
+  33              	@ 9 "main.c" 1
+  34 0002 62B6     		CPSIE   i
+  35              	@ 0 "" 2
+  36              		.code	16
+  37              	.L2:
+  10:main.c        ****     
+  11:main.c        ****    //2.0, 3.2, 3.0, 4.0
+  12:main.c        ****     
+  13:main.c        ****     for(;;)
+  14:main.c        ****     {
+  15:main.c        ****             //set off
+  16:main.c        ****             Pin_Red_Write(0);
+  38              		.loc 1 16 0 discriminator 1
+  39 0004 0020     		mov	r0, #0
+  40 0006 FFF7FEFF 		bl	Pin_Red_Write
+  41              	.LVL0:
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 2
+
+
+  17:main.c        ****             LED1_Write(0);
+  42              		.loc 1 17 0 discriminator 1
+  43 000a 0020     		mov	r0, #0
+  44 000c FFF7FEFF 		bl	LED1_Write
+  45              	.LVL1:
+  18:main.c        ****             LED2_Write(0);
+  46              		.loc 1 18 0 discriminator 1
+  47 0010 0020     		mov	r0, #0
+  48 0012 FFF7FEFF 		bl	LED2_Write
+  49              	.LVL2:
+  19:main.c        ****             LED3_Write(0);
+  50              		.loc 1 19 0 discriminator 1
+  51 0016 0020     		mov	r0, #0
+  52 0018 FFF7FEFF 		bl	LED3_Write
+  53              	.LVL3:
+  20:main.c        ****             MOSFET1_Write(0);
+  54              		.loc 1 20 0 discriminator 1
+  55 001c 0020     		mov	r0, #0
+  56 001e FFF7FEFF 		bl	MOSFET1_Write
+  57              	.LVL4:
+  21:main.c        ****             CyDelay(100);
+  58              		.loc 1 21 0 discriminator 1
+  59 0022 6420     		mov	r0, #100
+  60 0024 FFF7FEFF 		bl	CyDelay
+  61              	.LVL5:
+  22:main.c        ****             
+  23:main.c        ****             //toggle fet
+  24:main.c        ****             MOSFET1_Write(1);
+  62              		.loc 1 24 0 discriminator 1
+  63 0028 0120     		mov	r0, #1
+  64 002a FFF7FEFF 		bl	MOSFET1_Write
+  65              	.LVL6:
+  25:main.c        ****             CyDelay(1000);           
+  66              		.loc 1 25 0 discriminator 1
+  67 002e FA24     		mov	r4, #250
+  68 0030 A400     		lsl	r4, r4, #2
+  69 0032 201C     		mov	r0, r4
+  70 0034 FFF7FEFF 		bl	CyDelay
+  71              	.LVL7:
+  26:main.c        ****             MOSFET1_Write(0);
+  72              		.loc 1 26 0 discriminator 1
+  73 0038 0020     		mov	r0, #0
+  74 003a FFF7FEFF 		bl	MOSFET1_Write
+  75              	.LVL8:
+  27:main.c        ****             CyDelay(100);
+  76              		.loc 1 27 0 discriminator 1
+  77 003e 6420     		mov	r0, #100
+  78 0040 FFF7FEFF 		bl	CyDelay
+  79              	.LVL9:
+  28:main.c        ****             
+  29:main.c        ****             //led1
+  30:main.c        ****             LED1_Write(1);
+  80              		.loc 1 30 0 discriminator 1
+  81 0044 0120     		mov	r0, #1
+  82 0046 FFF7FEFF 		bl	LED1_Write
+  83              	.LVL10:
+  31:main.c        ****             CyDelay(1000);
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 3
+
+
+  84              		.loc 1 31 0 discriminator 1
+  85 004a 201C     		mov	r0, r4
+  86 004c FFF7FEFF 		bl	CyDelay
+  87              	.LVL11:
+  32:main.c        ****             LED1_Write(0);
+  88              		.loc 1 32 0 discriminator 1
+  89 0050 0020     		mov	r0, #0
+  90 0052 FFF7FEFF 		bl	LED1_Write
+  91              	.LVL12:
+  33:main.c        ****             CyDelay(100);
+  92              		.loc 1 33 0 discriminator 1
+  93 0056 6420     		mov	r0, #100
+  94 0058 FFF7FEFF 		bl	CyDelay
+  95              	.LVL13:
+  34:main.c        ****             
+  35:main.c        ****             //led2
+  36:main.c        ****             LED2_Write(1);
+  96              		.loc 1 36 0 discriminator 1
+  97 005c 0120     		mov	r0, #1
+  98 005e FFF7FEFF 		bl	LED2_Write
+  99              	.LVL14:
+  37:main.c        ****             CyDelay(1000);
+ 100              		.loc 1 37 0 discriminator 1
+ 101 0062 201C     		mov	r0, r4
+ 102 0064 FFF7FEFF 		bl	CyDelay
+ 103              	.LVL15:
+  38:main.c        ****             LED2_Write(0);
+ 104              		.loc 1 38 0 discriminator 1
+ 105 0068 0020     		mov	r0, #0
+ 106 006a FFF7FEFF 		bl	LED2_Write
+ 107              	.LVL16:
+  39:main.c        ****             CyDelay(100);
+ 108              		.loc 1 39 0 discriminator 1
+ 109 006e 6420     		mov	r0, #100
+ 110 0070 FFF7FEFF 		bl	CyDelay
+ 111              	.LVL17:
+  40:main.c        ****             
+  41:main.c        ****             //led3
+  42:main.c        ****             LED3_Write(1);
+ 112              		.loc 1 42 0 discriminator 1
+ 113 0074 0120     		mov	r0, #1
+ 114 0076 FFF7FEFF 		bl	LED3_Write
+ 115              	.LVL18:
+  43:main.c        ****             CyDelay(1000);
+ 116              		.loc 1 43 0 discriminator 1
+ 117 007a 201C     		mov	r0, r4
+ 118 007c FFF7FEFF 		bl	CyDelay
+ 119              	.LVL19:
+  44:main.c        ****             LED3_Write(0);
+ 120              		.loc 1 44 0 discriminator 1
+ 121 0080 0020     		mov	r0, #0
+ 122 0082 FFF7FEFF 		bl	LED3_Write
+ 123              	.LVL20:
+  45:main.c        ****             CyDelay(100);   
+ 124              		.loc 1 45 0 discriminator 1
+ 125 0086 6420     		mov	r0, #100
+ 126 0088 FFF7FEFF 		bl	CyDelay
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 4
+
+
+ 127              	.LVL21:
+  46:main.c        ****     }
+ 128              		.loc 1 46 0 discriminator 1
+ 129 008c BAE7     		b	.L2
+ 130              		.cfi_endproc
+ 131              	.LFE35:
+ 132              		.size	main, .-main
+ 133 008e C046     		.text
+ 134              	.Letext0:
+ 135              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 136              		.file 3 "Generated_Source\\PSoC4/Pin_Red.h"
+ 137              		.file 4 "Generated_Source\\PSoC4/LED1.h"
+ 138              		.file 5 "Generated_Source\\PSoC4/LED2.h"
+ 139              		.file 6 "Generated_Source\\PSoC4/LED3.h"
+ 140              		.file 7 "Generated_Source\\PSoC4/MOSFET1.h"
+ 141              		.file 8 "Generated_Source\\PSoC4/CyLib.h"
+ 142              		.section	.debug_info,"",%progbits
+ 143              	.Ldebug_info0:
+ 144 0000 BD020000 		.4byte	0x2bd
+ 145 0004 0400     		.2byte	0x4
+ 146 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 147 000a 04       		.byte	0x4
+ 148 000b 01       		.uleb128 0x1
+ 149 000c 41010000 		.4byte	.LASF20
+ 150 0010 01       		.byte	0x1
+ 151 0011 2D000000 		.4byte	.LASF21
+ 152 0015 8F000000 		.4byte	.LASF22
+ 153 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 154 001d 00000000 		.4byte	0
+ 155 0021 00000000 		.4byte	.Ldebug_line0
+ 156 0025 02       		.uleb128 0x2
+ 157 0026 01       		.byte	0x1
+ 158 0027 06       		.byte	0x6
+ 159 0028 2A010000 		.4byte	.LASF0
+ 160 002c 02       		.uleb128 0x2
+ 161 002d 01       		.byte	0x1
+ 162 002e 08       		.byte	0x8
+ 163 002f E6000000 		.4byte	.LASF1
+ 164 0033 02       		.uleb128 0x2
+ 165 0034 02       		.byte	0x2
+ 166 0035 05       		.byte	0x5
+ 167 0036 CF010000 		.4byte	.LASF2
+ 168 003a 02       		.uleb128 0x2
+ 169 003b 02       		.byte	0x2
+ 170 003c 07       		.byte	0x7
+ 171 003d 17010000 		.4byte	.LASF3
+ 172 0041 02       		.uleb128 0x2
+ 173 0042 04       		.byte	0x4
+ 174 0043 05       		.byte	0x5
+ 175 0044 F9000000 		.4byte	.LASF4
+ 176 0048 02       		.uleb128 0x2
+ 177 0049 04       		.byte	0x4
+ 178 004a 07       		.byte	0x7
+ 179 004b 47000000 		.4byte	.LASF5
+ 180 004f 02       		.uleb128 0x2
+ 181 0050 08       		.byte	0x8
+ 182 0051 05       		.byte	0x5
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 5
+
+
+ 183 0052 00000000 		.4byte	.LASF6
+ 184 0056 02       		.uleb128 0x2
+ 185 0057 08       		.byte	0x8
+ 186 0058 07       		.byte	0x7
+ 187 0059 64000000 		.4byte	.LASF7
+ 188 005d 03       		.uleb128 0x3
+ 189 005e 04       		.byte	0x4
+ 190 005f 05       		.byte	0x5
+ 191 0060 696E7400 		.ascii	"int\000"
+ 192 0064 02       		.uleb128 0x2
+ 193 0065 04       		.byte	0x4
+ 194 0066 07       		.byte	0x7
+ 195 0067 19000000 		.4byte	.LASF8
+ 196 006b 04       		.uleb128 0x4
+ 197 006c 41000000 		.4byte	.LASF9
+ 198 0070 02       		.byte	0x2
+ 199 0071 C1       		.byte	0xc1
+ 200 0072 2C000000 		.4byte	0x2c
+ 201 0076 04       		.uleb128 0x4
+ 202 0077 26000000 		.4byte	.LASF10
+ 203 007b 02       		.byte	0x2
+ 204 007c C3       		.byte	0xc3
+ 205 007d 48000000 		.4byte	0x48
+ 206 0081 02       		.uleb128 0x2
+ 207 0082 04       		.byte	0x4
+ 208 0083 04       		.byte	0x4
+ 209 0084 7B000000 		.4byte	.LASF11
+ 210 0088 02       		.uleb128 0x2
+ 211 0089 08       		.byte	0x8
+ 212 008a 04       		.byte	0x4
+ 213 008b 02010000 		.4byte	.LASF12
+ 214 008f 02       		.uleb128 0x2
+ 215 0090 01       		.byte	0x1
+ 216 0091 08       		.byte	0x8
+ 217 0092 F4000000 		.4byte	.LASF13
+ 218 0096 02       		.uleb128 0x2
+ 219 0097 04       		.byte	0x4
+ 220 0098 07       		.byte	0x7
+ 221 0099 D9010000 		.4byte	.LASF14
+ 222 009d 05       		.uleb128 0x5
+ 223 009e 34000000 		.4byte	.LASF23
+ 224 00a2 01       		.byte	0x1
+ 225 00a3 07       		.byte	0x7
+ 226 00a4 5D000000 		.4byte	0x5d
+ 227 00a8 00000000 		.4byte	.LFB35
+ 228 00ac 8E000000 		.4byte	.LFE35-.LFB35
+ 229 00b0 01       		.uleb128 0x1
+ 230 00b1 9C       		.byte	0x9c
+ 231 00b2 5E020000 		.4byte	0x25e
+ 232 00b6 06       		.uleb128 0x6
+ 233 00b7 0A000000 		.4byte	.LVL0
+ 234 00bb 5E020000 		.4byte	0x25e
+ 235 00bf C9000000 		.4byte	0xc9
+ 236 00c3 07       		.uleb128 0x7
+ 237 00c4 01       		.uleb128 0x1
+ 238 00c5 50       		.byte	0x50
+ 239 00c6 01       		.uleb128 0x1
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 6
+
+
+ 240 00c7 30       		.byte	0x30
+ 241 00c8 00       		.byte	0
+ 242 00c9 06       		.uleb128 0x6
+ 243 00ca 10000000 		.4byte	.LVL1
+ 244 00ce 6F020000 		.4byte	0x26f
+ 245 00d2 DC000000 		.4byte	0xdc
+ 246 00d6 07       		.uleb128 0x7
+ 247 00d7 01       		.uleb128 0x1
+ 248 00d8 50       		.byte	0x50
+ 249 00d9 01       		.uleb128 0x1
+ 250 00da 30       		.byte	0x30
+ 251 00db 00       		.byte	0
+ 252 00dc 06       		.uleb128 0x6
+ 253 00dd 16000000 		.4byte	.LVL2
+ 254 00e1 80020000 		.4byte	0x280
+ 255 00e5 EF000000 		.4byte	0xef
+ 256 00e9 07       		.uleb128 0x7
+ 257 00ea 01       		.uleb128 0x1
+ 258 00eb 50       		.byte	0x50
+ 259 00ec 01       		.uleb128 0x1
+ 260 00ed 30       		.byte	0x30
+ 261 00ee 00       		.byte	0
+ 262 00ef 06       		.uleb128 0x6
+ 263 00f0 1C000000 		.4byte	.LVL3
+ 264 00f4 91020000 		.4byte	0x291
+ 265 00f8 02010000 		.4byte	0x102
+ 266 00fc 07       		.uleb128 0x7
+ 267 00fd 01       		.uleb128 0x1
+ 268 00fe 50       		.byte	0x50
+ 269 00ff 01       		.uleb128 0x1
+ 270 0100 30       		.byte	0x30
+ 271 0101 00       		.byte	0
+ 272 0102 06       		.uleb128 0x6
+ 273 0103 22000000 		.4byte	.LVL4
+ 274 0107 A2020000 		.4byte	0x2a2
+ 275 010b 15010000 		.4byte	0x115
+ 276 010f 07       		.uleb128 0x7
+ 277 0110 01       		.uleb128 0x1
+ 278 0111 50       		.byte	0x50
+ 279 0112 01       		.uleb128 0x1
+ 280 0113 30       		.byte	0x30
+ 281 0114 00       		.byte	0
+ 282 0115 06       		.uleb128 0x6
+ 283 0116 28000000 		.4byte	.LVL5
+ 284 011a B3020000 		.4byte	0x2b3
+ 285 011e 29010000 		.4byte	0x129
+ 286 0122 07       		.uleb128 0x7
+ 287 0123 01       		.uleb128 0x1
+ 288 0124 50       		.byte	0x50
+ 289 0125 02       		.uleb128 0x2
+ 290 0126 08       		.byte	0x8
+ 291 0127 64       		.byte	0x64
+ 292 0128 00       		.byte	0
+ 293 0129 06       		.uleb128 0x6
+ 294 012a 2E000000 		.4byte	.LVL6
+ 295 012e A2020000 		.4byte	0x2a2
+ 296 0132 3C010000 		.4byte	0x13c
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 7
+
+
+ 297 0136 07       		.uleb128 0x7
+ 298 0137 01       		.uleb128 0x1
+ 299 0138 50       		.byte	0x50
+ 300 0139 01       		.uleb128 0x1
+ 301 013a 31       		.byte	0x31
+ 302 013b 00       		.byte	0
+ 303 013c 06       		.uleb128 0x6
+ 304 013d 38000000 		.4byte	.LVL7
+ 305 0141 B3020000 		.4byte	0x2b3
+ 306 0145 50010000 		.4byte	0x150
+ 307 0149 07       		.uleb128 0x7
+ 308 014a 01       		.uleb128 0x1
+ 309 014b 50       		.byte	0x50
+ 310 014c 02       		.uleb128 0x2
+ 311 014d 74       		.byte	0x74
+ 312 014e 00       		.sleb128 0
+ 313 014f 00       		.byte	0
+ 314 0150 06       		.uleb128 0x6
+ 315 0151 3E000000 		.4byte	.LVL8
+ 316 0155 A2020000 		.4byte	0x2a2
+ 317 0159 63010000 		.4byte	0x163
+ 318 015d 07       		.uleb128 0x7
+ 319 015e 01       		.uleb128 0x1
+ 320 015f 50       		.byte	0x50
+ 321 0160 01       		.uleb128 0x1
+ 322 0161 30       		.byte	0x30
+ 323 0162 00       		.byte	0
+ 324 0163 06       		.uleb128 0x6
+ 325 0164 44000000 		.4byte	.LVL9
+ 326 0168 B3020000 		.4byte	0x2b3
+ 327 016c 77010000 		.4byte	0x177
+ 328 0170 07       		.uleb128 0x7
+ 329 0171 01       		.uleb128 0x1
+ 330 0172 50       		.byte	0x50
+ 331 0173 02       		.uleb128 0x2
+ 332 0174 08       		.byte	0x8
+ 333 0175 64       		.byte	0x64
+ 334 0176 00       		.byte	0
+ 335 0177 06       		.uleb128 0x6
+ 336 0178 4A000000 		.4byte	.LVL10
+ 337 017c 6F020000 		.4byte	0x26f
+ 338 0180 8A010000 		.4byte	0x18a
+ 339 0184 07       		.uleb128 0x7
+ 340 0185 01       		.uleb128 0x1
+ 341 0186 50       		.byte	0x50
+ 342 0187 01       		.uleb128 0x1
+ 343 0188 31       		.byte	0x31
+ 344 0189 00       		.byte	0
+ 345 018a 06       		.uleb128 0x6
+ 346 018b 50000000 		.4byte	.LVL11
+ 347 018f B3020000 		.4byte	0x2b3
+ 348 0193 9E010000 		.4byte	0x19e
+ 349 0197 07       		.uleb128 0x7
+ 350 0198 01       		.uleb128 0x1
+ 351 0199 50       		.byte	0x50
+ 352 019a 02       		.uleb128 0x2
+ 353 019b 74       		.byte	0x74
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 8
+
+
+ 354 019c 00       		.sleb128 0
+ 355 019d 00       		.byte	0
+ 356 019e 06       		.uleb128 0x6
+ 357 019f 56000000 		.4byte	.LVL12
+ 358 01a3 6F020000 		.4byte	0x26f
+ 359 01a7 B1010000 		.4byte	0x1b1
+ 360 01ab 07       		.uleb128 0x7
+ 361 01ac 01       		.uleb128 0x1
+ 362 01ad 50       		.byte	0x50
+ 363 01ae 01       		.uleb128 0x1
+ 364 01af 30       		.byte	0x30
+ 365 01b0 00       		.byte	0
+ 366 01b1 06       		.uleb128 0x6
+ 367 01b2 5C000000 		.4byte	.LVL13
+ 368 01b6 B3020000 		.4byte	0x2b3
+ 369 01ba C5010000 		.4byte	0x1c5
+ 370 01be 07       		.uleb128 0x7
+ 371 01bf 01       		.uleb128 0x1
+ 372 01c0 50       		.byte	0x50
+ 373 01c1 02       		.uleb128 0x2
+ 374 01c2 08       		.byte	0x8
+ 375 01c3 64       		.byte	0x64
+ 376 01c4 00       		.byte	0
+ 377 01c5 06       		.uleb128 0x6
+ 378 01c6 62000000 		.4byte	.LVL14
+ 379 01ca 80020000 		.4byte	0x280
+ 380 01ce D8010000 		.4byte	0x1d8
+ 381 01d2 07       		.uleb128 0x7
+ 382 01d3 01       		.uleb128 0x1
+ 383 01d4 50       		.byte	0x50
+ 384 01d5 01       		.uleb128 0x1
+ 385 01d6 31       		.byte	0x31
+ 386 01d7 00       		.byte	0
+ 387 01d8 06       		.uleb128 0x6
+ 388 01d9 68000000 		.4byte	.LVL15
+ 389 01dd B3020000 		.4byte	0x2b3
+ 390 01e1 EC010000 		.4byte	0x1ec
+ 391 01e5 07       		.uleb128 0x7
+ 392 01e6 01       		.uleb128 0x1
+ 393 01e7 50       		.byte	0x50
+ 394 01e8 02       		.uleb128 0x2
+ 395 01e9 74       		.byte	0x74
+ 396 01ea 00       		.sleb128 0
+ 397 01eb 00       		.byte	0
+ 398 01ec 06       		.uleb128 0x6
+ 399 01ed 6E000000 		.4byte	.LVL16
+ 400 01f1 80020000 		.4byte	0x280
+ 401 01f5 FF010000 		.4byte	0x1ff
+ 402 01f9 07       		.uleb128 0x7
+ 403 01fa 01       		.uleb128 0x1
+ 404 01fb 50       		.byte	0x50
+ 405 01fc 01       		.uleb128 0x1
+ 406 01fd 30       		.byte	0x30
+ 407 01fe 00       		.byte	0
+ 408 01ff 06       		.uleb128 0x6
+ 409 0200 74000000 		.4byte	.LVL17
+ 410 0204 B3020000 		.4byte	0x2b3
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 9
+
+
+ 411 0208 13020000 		.4byte	0x213
+ 412 020c 07       		.uleb128 0x7
+ 413 020d 01       		.uleb128 0x1
+ 414 020e 50       		.byte	0x50
+ 415 020f 02       		.uleb128 0x2
+ 416 0210 08       		.byte	0x8
+ 417 0211 64       		.byte	0x64
+ 418 0212 00       		.byte	0
+ 419 0213 06       		.uleb128 0x6
+ 420 0214 7A000000 		.4byte	.LVL18
+ 421 0218 91020000 		.4byte	0x291
+ 422 021c 26020000 		.4byte	0x226
+ 423 0220 07       		.uleb128 0x7
+ 424 0221 01       		.uleb128 0x1
+ 425 0222 50       		.byte	0x50
+ 426 0223 01       		.uleb128 0x1
+ 427 0224 31       		.byte	0x31
+ 428 0225 00       		.byte	0
+ 429 0226 06       		.uleb128 0x6
+ 430 0227 80000000 		.4byte	.LVL19
+ 431 022b B3020000 		.4byte	0x2b3
+ 432 022f 3A020000 		.4byte	0x23a
+ 433 0233 07       		.uleb128 0x7
+ 434 0234 01       		.uleb128 0x1
+ 435 0235 50       		.byte	0x50
+ 436 0236 02       		.uleb128 0x2
+ 437 0237 74       		.byte	0x74
+ 438 0238 00       		.sleb128 0
+ 439 0239 00       		.byte	0
+ 440 023a 06       		.uleb128 0x6
+ 441 023b 86000000 		.4byte	.LVL20
+ 442 023f 91020000 		.4byte	0x291
+ 443 0243 4D020000 		.4byte	0x24d
+ 444 0247 07       		.uleb128 0x7
+ 445 0248 01       		.uleb128 0x1
+ 446 0249 50       		.byte	0x50
+ 447 024a 01       		.uleb128 0x1
+ 448 024b 30       		.byte	0x30
+ 449 024c 00       		.byte	0
+ 450 024d 08       		.uleb128 0x8
+ 451 024e 8C000000 		.4byte	.LVL21
+ 452 0252 B3020000 		.4byte	0x2b3
+ 453 0256 07       		.uleb128 0x7
+ 454 0257 01       		.uleb128 0x1
+ 455 0258 50       		.byte	0x50
+ 456 0259 02       		.uleb128 0x2
+ 457 025a 08       		.byte	0x8
+ 458 025b 64       		.byte	0x64
+ 459 025c 00       		.byte	0
+ 460 025d 00       		.byte	0
+ 461 025e 09       		.uleb128 0x9
+ 462 025f 81000000 		.4byte	.LASF15
+ 463 0263 03       		.byte	0x3
+ 464 0264 1D       		.byte	0x1d
+ 465 0265 6F020000 		.4byte	0x26f
+ 466 0269 0A       		.uleb128 0xa
+ 467 026a 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 10
+
+
+ 468 026e 00       		.byte	0
+ 469 026f 09       		.uleb128 0x9
+ 470 0270 36010000 		.4byte	.LASF16
+ 471 0274 04       		.byte	0x4
+ 472 0275 1D       		.byte	0x1d
+ 473 0276 80020000 		.4byte	0x280
+ 474 027a 0A       		.uleb128 0xa
+ 475 027b 6B000000 		.4byte	0x6b
+ 476 027f 00       		.byte	0
+ 477 0280 09       		.uleb128 0x9
+ 478 0281 0E000000 		.4byte	.LASF17
+ 479 0285 05       		.byte	0x5
+ 480 0286 1D       		.byte	0x1d
+ 481 0287 91020000 		.4byte	0x291
+ 482 028b 0A       		.uleb128 0xa
+ 483 028c 6B000000 		.4byte	0x6b
+ 484 0290 00       		.byte	0
+ 485 0291 09       		.uleb128 0x9
+ 486 0292 59000000 		.4byte	.LASF18
+ 487 0296 06       		.byte	0x6
+ 488 0297 1D       		.byte	0x1d
+ 489 0298 A2020000 		.4byte	0x2a2
+ 490 029c 0A       		.uleb128 0xa
+ 491 029d 6B000000 		.4byte	0x6b
+ 492 02a1 00       		.byte	0
+ 493 02a2 09       		.uleb128 0x9
+ 494 02a3 09010000 		.4byte	.LASF19
+ 495 02a7 07       		.byte	0x7
+ 496 02a8 1D       		.byte	0x1d
+ 497 02a9 B3020000 		.4byte	0x2b3
+ 498 02ad 0A       		.uleb128 0xa
+ 499 02ae 6B000000 		.4byte	0x6b
+ 500 02b2 00       		.byte	0
+ 501 02b3 0B       		.uleb128 0xb
+ 502 02b4 39000000 		.4byte	.LASF24
+ 503 02b8 08       		.byte	0x8
+ 504 02b9 57       		.byte	0x57
+ 505 02ba 0A       		.uleb128 0xa
+ 506 02bb 76000000 		.4byte	0x76
+ 507 02bf 00       		.byte	0
+ 508 02c0 00       		.byte	0
+ 509              		.section	.debug_abbrev,"",%progbits
+ 510              	.Ldebug_abbrev0:
+ 511 0000 01       		.uleb128 0x1
+ 512 0001 11       		.uleb128 0x11
+ 513 0002 01       		.byte	0x1
+ 514 0003 25       		.uleb128 0x25
+ 515 0004 0E       		.uleb128 0xe
+ 516 0005 13       		.uleb128 0x13
+ 517 0006 0B       		.uleb128 0xb
+ 518 0007 03       		.uleb128 0x3
+ 519 0008 0E       		.uleb128 0xe
+ 520 0009 1B       		.uleb128 0x1b
+ 521 000a 0E       		.uleb128 0xe
+ 522 000b 55       		.uleb128 0x55
+ 523 000c 17       		.uleb128 0x17
+ 524 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 11
+
+
+ 525 000e 01       		.uleb128 0x1
+ 526 000f 10       		.uleb128 0x10
+ 527 0010 17       		.uleb128 0x17
+ 528 0011 00       		.byte	0
+ 529 0012 00       		.byte	0
+ 530 0013 02       		.uleb128 0x2
+ 531 0014 24       		.uleb128 0x24
+ 532 0015 00       		.byte	0
+ 533 0016 0B       		.uleb128 0xb
+ 534 0017 0B       		.uleb128 0xb
+ 535 0018 3E       		.uleb128 0x3e
+ 536 0019 0B       		.uleb128 0xb
+ 537 001a 03       		.uleb128 0x3
+ 538 001b 0E       		.uleb128 0xe
+ 539 001c 00       		.byte	0
+ 540 001d 00       		.byte	0
+ 541 001e 03       		.uleb128 0x3
+ 542 001f 24       		.uleb128 0x24
+ 543 0020 00       		.byte	0
+ 544 0021 0B       		.uleb128 0xb
+ 545 0022 0B       		.uleb128 0xb
+ 546 0023 3E       		.uleb128 0x3e
+ 547 0024 0B       		.uleb128 0xb
+ 548 0025 03       		.uleb128 0x3
+ 549 0026 08       		.uleb128 0x8
+ 550 0027 00       		.byte	0
+ 551 0028 00       		.byte	0
+ 552 0029 04       		.uleb128 0x4
+ 553 002a 16       		.uleb128 0x16
+ 554 002b 00       		.byte	0
+ 555 002c 03       		.uleb128 0x3
+ 556 002d 0E       		.uleb128 0xe
+ 557 002e 3A       		.uleb128 0x3a
+ 558 002f 0B       		.uleb128 0xb
+ 559 0030 3B       		.uleb128 0x3b
+ 560 0031 0B       		.uleb128 0xb
+ 561 0032 49       		.uleb128 0x49
+ 562 0033 13       		.uleb128 0x13
+ 563 0034 00       		.byte	0
+ 564 0035 00       		.byte	0
+ 565 0036 05       		.uleb128 0x5
+ 566 0037 2E       		.uleb128 0x2e
+ 567 0038 01       		.byte	0x1
+ 568 0039 3F       		.uleb128 0x3f
+ 569 003a 19       		.uleb128 0x19
+ 570 003b 03       		.uleb128 0x3
+ 571 003c 0E       		.uleb128 0xe
+ 572 003d 3A       		.uleb128 0x3a
+ 573 003e 0B       		.uleb128 0xb
+ 574 003f 3B       		.uleb128 0x3b
+ 575 0040 0B       		.uleb128 0xb
+ 576 0041 49       		.uleb128 0x49
+ 577 0042 13       		.uleb128 0x13
+ 578 0043 11       		.uleb128 0x11
+ 579 0044 01       		.uleb128 0x1
+ 580 0045 12       		.uleb128 0x12
+ 581 0046 06       		.uleb128 0x6
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 12
+
+
+ 582 0047 40       		.uleb128 0x40
+ 583 0048 18       		.uleb128 0x18
+ 584 0049 9742     		.uleb128 0x2117
+ 585 004b 19       		.uleb128 0x19
+ 586 004c 01       		.uleb128 0x1
+ 587 004d 13       		.uleb128 0x13
+ 588 004e 00       		.byte	0
+ 589 004f 00       		.byte	0
+ 590 0050 06       		.uleb128 0x6
+ 591 0051 898201   		.uleb128 0x4109
+ 592 0054 01       		.byte	0x1
+ 593 0055 11       		.uleb128 0x11
+ 594 0056 01       		.uleb128 0x1
+ 595 0057 31       		.uleb128 0x31
+ 596 0058 13       		.uleb128 0x13
+ 597 0059 01       		.uleb128 0x1
+ 598 005a 13       		.uleb128 0x13
+ 599 005b 00       		.byte	0
+ 600 005c 00       		.byte	0
+ 601 005d 07       		.uleb128 0x7
+ 602 005e 8A8201   		.uleb128 0x410a
+ 603 0061 00       		.byte	0
+ 604 0062 02       		.uleb128 0x2
+ 605 0063 18       		.uleb128 0x18
+ 606 0064 9142     		.uleb128 0x2111
+ 607 0066 18       		.uleb128 0x18
+ 608 0067 00       		.byte	0
+ 609 0068 00       		.byte	0
+ 610 0069 08       		.uleb128 0x8
+ 611 006a 898201   		.uleb128 0x4109
+ 612 006d 01       		.byte	0x1
+ 613 006e 11       		.uleb128 0x11
+ 614 006f 01       		.uleb128 0x1
+ 615 0070 31       		.uleb128 0x31
+ 616 0071 13       		.uleb128 0x13
+ 617 0072 00       		.byte	0
+ 618 0073 00       		.byte	0
+ 619 0074 09       		.uleb128 0x9
+ 620 0075 2E       		.uleb128 0x2e
+ 621 0076 01       		.byte	0x1
+ 622 0077 3F       		.uleb128 0x3f
+ 623 0078 19       		.uleb128 0x19
+ 624 0079 03       		.uleb128 0x3
+ 625 007a 0E       		.uleb128 0xe
+ 626 007b 3A       		.uleb128 0x3a
+ 627 007c 0B       		.uleb128 0xb
+ 628 007d 3B       		.uleb128 0x3b
+ 629 007e 0B       		.uleb128 0xb
+ 630 007f 27       		.uleb128 0x27
+ 631 0080 19       		.uleb128 0x19
+ 632 0081 3C       		.uleb128 0x3c
+ 633 0082 19       		.uleb128 0x19
+ 634 0083 01       		.uleb128 0x1
+ 635 0084 13       		.uleb128 0x13
+ 636 0085 00       		.byte	0
+ 637 0086 00       		.byte	0
+ 638 0087 0A       		.uleb128 0xa
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 13
+
+
+ 639 0088 05       		.uleb128 0x5
+ 640 0089 00       		.byte	0
+ 641 008a 49       		.uleb128 0x49
+ 642 008b 13       		.uleb128 0x13
+ 643 008c 00       		.byte	0
+ 644 008d 00       		.byte	0
+ 645 008e 0B       		.uleb128 0xb
+ 646 008f 2E       		.uleb128 0x2e
+ 647 0090 01       		.byte	0x1
+ 648 0091 3F       		.uleb128 0x3f
+ 649 0092 19       		.uleb128 0x19
+ 650 0093 03       		.uleb128 0x3
+ 651 0094 0E       		.uleb128 0xe
+ 652 0095 3A       		.uleb128 0x3a
+ 653 0096 0B       		.uleb128 0xb
+ 654 0097 3B       		.uleb128 0x3b
+ 655 0098 0B       		.uleb128 0xb
+ 656 0099 27       		.uleb128 0x27
+ 657 009a 19       		.uleb128 0x19
+ 658 009b 3C       		.uleb128 0x3c
+ 659 009c 19       		.uleb128 0x19
+ 660 009d 00       		.byte	0
+ 661 009e 00       		.byte	0
+ 662 009f 00       		.byte	0
+ 663              		.section	.debug_aranges,"",%progbits
+ 664 0000 1C000000 		.4byte	0x1c
+ 665 0004 0200     		.2byte	0x2
+ 666 0006 00000000 		.4byte	.Ldebug_info0
+ 667 000a 04       		.byte	0x4
+ 668 000b 00       		.byte	0
+ 669 000c 0000     		.2byte	0
+ 670 000e 0000     		.2byte	0
+ 671 0010 00000000 		.4byte	.LFB35
+ 672 0014 8E000000 		.4byte	.LFE35-.LFB35
+ 673 0018 00000000 		.4byte	0
+ 674 001c 00000000 		.4byte	0
+ 675              		.section	.debug_ranges,"",%progbits
+ 676              	.Ldebug_ranges0:
+ 677 0000 00000000 		.4byte	.LFB35
+ 678 0004 8E000000 		.4byte	.LFE35
+ 679 0008 00000000 		.4byte	0
+ 680 000c 00000000 		.4byte	0
+ 681              		.section	.debug_line,"",%progbits
+ 682              	.Ldebug_line0:
+ 683 0000 0B010000 		.section	.debug_str,"MS",%progbits,1
+ 683      02008400 
+ 683      00000201 
+ 683      FB0E0D00 
+ 683      01010101 
+ 684              	.LASF6:
+ 685 0000 6C6F6E67 		.ascii	"long long int\000"
+ 685      206C6F6E 
+ 685      6720696E 
+ 685      7400
+ 686              	.LASF17:
+ 687 000e 4C454432 		.ascii	"LED2_Write\000"
+ 687      5F577269 
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 14
+
+
+ 687      746500
+ 688              	.LASF8:
+ 689 0019 756E7369 		.ascii	"unsigned int\000"
+ 689      676E6564 
+ 689      20696E74 
+ 689      00
+ 690              	.LASF10:
+ 691 0026 75696E74 		.ascii	"uint32\000"
+ 691      333200
+ 692              	.LASF21:
+ 693 002d 6D61696E 		.ascii	"main.c\000"
+ 693      2E6300
+ 694              	.LASF23:
+ 695 0034 6D61696E 		.ascii	"main\000"
+ 695      00
+ 696              	.LASF24:
+ 697 0039 43794465 		.ascii	"CyDelay\000"
+ 697      6C617900 
+ 698              	.LASF9:
+ 699 0041 75696E74 		.ascii	"uint8\000"
+ 699      3800
+ 700              	.LASF5:
+ 701 0047 6C6F6E67 		.ascii	"long unsigned int\000"
+ 701      20756E73 
+ 701      69676E65 
+ 701      6420696E 
+ 701      7400
+ 702              	.LASF18:
+ 703 0059 4C454433 		.ascii	"LED3_Write\000"
+ 703      5F577269 
+ 703      746500
+ 704              	.LASF7:
+ 705 0064 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 705      206C6F6E 
+ 705      6720756E 
+ 705      7369676E 
+ 705      65642069 
+ 706              	.LASF11:
+ 707 007b 666C6F61 		.ascii	"float\000"
+ 707      7400
+ 708              	.LASF15:
+ 709 0081 50696E5F 		.ascii	"Pin_Red_Write\000"
+ 709      5265645F 
+ 709      57726974 
+ 709      6500
+ 710              	.LASF22:
+ 711 008f 433A5C55 		.ascii	"C:\\Users\\tyran\\Desktop\\ASU\\EGR 304 PSoC Work\\"
+ 711      73657273 
+ 711      5C747972 
+ 711      616E5C44 
+ 711      65736B74 
+ 712 00bc 5072696D 		.ascii	"Primary Board Code\\PrimaryBoardCode.cydsn\000"
+ 712      61727920 
+ 712      426F6172 
+ 712      6420436F 
+ 712      64655C50 
+ 713              	.LASF1:
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 15
+
+
+ 714 00e6 756E7369 		.ascii	"unsigned char\000"
+ 714      676E6564 
+ 714      20636861 
+ 714      7200
+ 715              	.LASF13:
+ 716 00f4 63686172 		.ascii	"char\000"
+ 716      00
+ 717              	.LASF4:
+ 718 00f9 6C6F6E67 		.ascii	"long int\000"
+ 718      20696E74 
+ 718      00
+ 719              	.LASF12:
+ 720 0102 646F7562 		.ascii	"double\000"
+ 720      6C6500
+ 721              	.LASF19:
+ 722 0109 4D4F5346 		.ascii	"MOSFET1_Write\000"
+ 722      4554315F 
+ 722      57726974 
+ 722      6500
+ 723              	.LASF3:
+ 724 0117 73686F72 		.ascii	"short unsigned int\000"
+ 724      7420756E 
+ 724      7369676E 
+ 724      65642069 
+ 724      6E7400
+ 725              	.LASF0:
+ 726 012a 7369676E 		.ascii	"signed char\000"
+ 726      65642063 
+ 726      68617200 
+ 727              	.LASF16:
+ 728 0136 4C454431 		.ascii	"LED1_Write\000"
+ 728      5F577269 
+ 728      746500
+ 729              	.LASF20:
+ 730 0141 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 730      4320342E 
+ 730      392E3320 
+ 730      32303135 
+ 730      30333033 
+ 731 0174 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 731      20726576 
+ 731      6973696F 
+ 731      6E203232 
+ 731      31323230 
+ 732 01a7 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 732      66756E63 
+ 732      74696F6E 
+ 732      2D736563 
+ 732      74696F6E 
+ 733              	.LASF2:
+ 734 01cf 73686F72 		.ascii	"short int\000"
+ 734      7420696E 
+ 734      7400
+ 735              	.LASF14:
+ 736 01d9 73697A65 		.ascii	"sizetype\000"
+ 736      74797065 
+ 736      00
+ARM GAS  C:\Users\tyran\AppData\Local\Temp\cc8SmG31.s 			page 16
+
+
+ 737              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

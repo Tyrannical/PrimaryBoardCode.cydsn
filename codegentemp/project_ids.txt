@@ -1,0 +1,6 @@
+C:\Users\tyran\Desktop\ASU\EGR 304 PSoC Work\Primary Board Code\PrimaryBoardCode.cydsn\PrimaryBoardCode.cyprj|057603d5-cf5e-4f91-8f1a-627b1b65fbc1
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|bcc2819f-54e7-4e89-bcf0-e12bce86f798
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|7b32aa9f-6877-4133-b90f-ba6af3429a5b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|7d36a105-eeb3-46e4-80ae-0410bbc78d34
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|4ade38f1-4e01-41a3-9d3b-9e8c6016a376
+C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|45bb59f7-426b-4b7d-96fc-3508acc92bf9
